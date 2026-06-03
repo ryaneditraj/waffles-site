@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potato Fan Club</title>
+
+    <style>
+        body{
+            background:#fff8d6;
+            font-family:Comic Sans MS;
+            padding:20px;
+        }
+
+        h1{
+            color:brown;
+        }
+
+        .potatobox{
+            border:3px dashed brown;
+            padding:15px;
+            width:350px;
+        }
+
+      button{
+            padding:10px;
+            margin-top:10px;
+            cursor:pointer;
+      }
+
+        img{
+            width:250px;
+            border-radius:20px;
+        }
+
+        a{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🥔 Potato Fan Club 🥔</h1>
+
+<p>
+Welcome to the greatest potato website ever made.
+I like potatoes. You probably like potatoes too.
+</p>
+
+<img id="potatoPic" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600">
+
+<div class="potatobox">
+
+<h2>Potato Click Counter</h2>
+
+<p>Potatoes clicked:</p>
+
+<h1 id="potatoNum">0</h1>
+
+<button onclick="clickPotato()">CLICK POTATO</button>
+
+</div>
+
+<br>
+
+<div class="potatobox">
+
+<h2>Random Potato Fact</h2>
+
+<p id="factArea">
+Press button for wisdom.
+</p>
+
+<button onclick="giveFact()">Give Fact</button>
+
+</div>
+
+<br>
+
+<div class="potatobox">
+
+<h2>Become A Member</h2>
+
+<input id="nameBox" placeholder="your name">
+
+<button onclick="joinClub()">Join</button>
+
+<p id="joinMsg"></p>
+
+</div>
+
+<br>
+
+<a href="stats.html">Go To Secret Potato Stats Page →</a>
+
+<script>
+
+var superPotatoNumberThing = 0;
+
+function clickPotato(){
+    superPotatoNumberThing++;
+
+    document.getElementById("potatoNum").innerHTML =
+    superPotatoNumberThing;
+}
+
+function giveFact(){
+
+    var weirdFacts = [
+        "Potatoes are awesome.",
+        "Some potatoes are bigger than your head.",
+        "French fries come from potatoes.",
+        "Potatoes have eyes but cannot see.",
+  "A potato never pays taxes."
+    ];
+
+    var randomThing =
+    Math.floor(Math.random()*weirdFacts.length);
+
+    document.getElementById("factArea").innerHTML =
+    weirdFacts[randomThing];
+}
+
+function joinClub(){
+
+    var funnyName =
+    document.getElementById("nameBox").value;
+
+    document.getElementById("joinMsg").innerHTML =
+    funnyName + " is now officially a potato fan.";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potato Stats</title>
+
+    <style>
+
+        body{
+            background:lightyellow;
+            font-family:Comic Sans MS;
+            padding:20px;
+        }
+
+        .box{
+            border:2px solid black;
+            margin:15px;
+            padding:15px;
+            width:350px;
+        }
+
+        button{
+            padding:10px;
+            cursor:pointer;
+        }
+
+     img{
+         width:250px;
+            border-radius:10px;
+     }
+
+    </style>
+</head>
+<body>
+
+<h1>🥔 Potato Stats Center 🥔</h1>
+
+<p>
+Scientists definitely did not help make these statistics.
+</p>
+
+<img src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=600">
+
+<div class="box">
+
+<h2>Potato Rating Machine</h2>
+
+<p id="ratingText">
+Click button
+</p>
+
+<button onclick="ratePotato()">
+Rate Me
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>Background Changer</h2>
+
+<button onclick="changeWorld()">
+Change Color
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>Live Name Checker</h2>
+
+<input id="coolBox" onkeyup="checkStuff()">
+
+<p id="coolAnswer">
+type something
+</p>
+
+</div>
+
+<br>
+
+<a href="index.html">→ Back Home</a>
+
+<script>
+
+function ratePotato(){
+
+    var ratings = [
+        "Tiny Potato",
+        "Average Potato",
+        "Mega Potato",
+        "Potato King",
+        "Supreme Potato Wizard"
+    ];
+
+    var randomPotatoThing =
+    Math.floor(Math.random()*ratings.length);
+
+    document.getElementById("ratingText").innerHTML =
+    ratings[randomPotatoThing];
+}
+
+function changeWorld(){
+
+    var colors = [
+        "pink",
+        "lightgreen",
+        "orange",
+        "lightblue",
+        "lavender"
+    ];
+
+    var mysteryColor =
+    Math.floor(Math.random()*colors.length);
+
+    document.body.style.backgroundColor =
+    colors[mysteryColor];
+}
+
+function checkStuff(){
+
+    var whatTheyTyped =
+    document.getElementById("coolBox").value;
+
+    if(whatTheyTyped.length < 5){
+        document.getElementById("coolAnswer").innerHTML =
+        "that is a short thing";
+    }
+    else{
+        document.getElementById("coolAnswer").innerHTML =
+        "wow long thing";
+    }
+}
+
+</script>
+
+</body>
+</html>
