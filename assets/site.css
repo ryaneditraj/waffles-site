@@ -1,0 +1,55 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding: 20px;
+    color-scheme: light;
+}
+
+body.home {
+    background: #fff8d6;
+}
+
+body.home h1 {
+    color: brown;
+}
+
+body.home .potatobox {
+    border: 3px dashed brown;
+    padding: 15px;
+    width: 350px;
+}
+
+body.home button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+body.home img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+body.home a {
+    font-size: 20px;
+}
+
+body.stats {
+    background: lightyellow;
+}
+
+body.stats .box {
+    border: 2px solid black;
+    margin: 15px;
+    padding: 15px;
+    width: 350px;
+}
+
+body.stats button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+body.stats img {
+    width: 250px;
+    border-radius: 10px;
+}

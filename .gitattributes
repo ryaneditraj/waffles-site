@@ -1,0 +1,6 @@
+* text=auto eol=lf
+docs/screenshots/** linguist-generated=true
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary

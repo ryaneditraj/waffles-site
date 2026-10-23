@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Potato Stats</title>
-
-    <style>
-
-        body{
-            background:lightyellow;
-            font-family:Comic Sans MS;
-            padding:20px;
-        }
-
-        .box{
-            border:2px solid black;
-            margin:15px;
-            padding:15px;
-            width:350px;
-        }
-
-        button{
-            padding:10px;
-            cursor:pointer;
-        }
-
-     img{
-         width:250px;
-            border-radius:10px;
-     }
-
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Potato Stats Center — ratings, colors, and a name check</title>
+    <meta name="description" content="Potato Stats Center is the joke statistics page of the Potato Fan Club: a random potato rating, a background color changer, and a live name-length checker. Hack Club Waffles project by Ryan Editraj.">
+    <meta name="author" content="Ryan Editraj">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffe0">
+    <link rel="canonical" href="https://waffleshackclub.netlify.app/stats.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Potato Fan Club">
+    <meta property="og:title" content="Potato Stats Center — ratings, colors, and a name check">
+    <meta property="og:description" content="A not-very-scientific potato stats page: random ratings, background colors, and a live name-length checker. Part of the Potato Fan Club by Ryan Editraj.">
+    <meta property="og:url" content="https://waffleshackclub.netlify.app/stats.html">
+    <meta property="og:image" content="https://waffleshackclub.netlify.app/docs/screenshots/stats.png">
+    <meta property="og:image:alt" content="Potato Stats Center page with a potato photo, rating machine, background changer, and name checker">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Potato Stats Center — ratings, colors, and a name check">
+    <meta name="twitter:description" content="A not-very-scientific potato stats page: random ratings, background colors, and a live name-length checker. Part of the Potato Fan Club by Ryan Editraj.">
+    <meta name="twitter:image" content="https://waffleshackclub.netlify.app/docs/screenshots/stats.png">
+    <meta name="twitter:image:alt" content="Potato Stats Center page with a potato photo, rating machine, background changer, and name checker">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com; style-src 'self'; script-src 'self' 'sha256-NSwEl2SqerjLSoXp5LrKMdO0doeAI3OCzZGtLY68We8='; base-uri 'self'; form-action 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Potato Stats Center",
+  "url": "https://waffleshackclub.netlify.app/stats.html",
+  "description": "Potato Stats Center is the joke statistics page of the Potato Fan Club: a random potato rating, a background color changer, and a live name-length checker.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Potato Fan Club",
+    "url": "https://waffleshackclub.netlify.app/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Ryan Editraj",
+    "url": "https://github.com/ryaneditraj",
+    "sameAs": [
+      "https://github.com/ryaneditraj",
+      "https://instagram.com/ryaneditraj"
+    ]
+  }
+}
+    </script>
 </head>
-<body>
+<body class="stats">
+
+<main>
 
 <h1>🥔 Potato Stats Center 🥔</h1>
 
@@ -38,17 +59,17 @@
 Scientists definitely did not help make these statistics.
 </p>
 
-<img src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=600">
+<img src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=600" alt="A hand holding a small yellow potato above a woven basket of potatoes" referrerpolicy="no-referrer">
 
 <div class="box">
 
 <h2>Potato Rating Machine</h2>
 
-<p id="ratingText">
+<p id="ratingText" aria-live="polite">
 Click button
 </p>
 
-<button onclick="ratePotato()">
+<button id="ratePotatoButton" type="button">
 Rate Me
 </button>
 
@@ -58,7 +79,7 @@ Rate Me
 
 <h2>Background Changer</h2>
 
-<button onclick="changeWorld()">
+<button id="changeWorldButton" type="button">
 Change Color
 </button>
 
@@ -68,9 +89,9 @@ Change Color
 
 <h2>Live Name Checker</h2>
 
-<input id="coolBox" onkeyup="checkStuff()">
+<input id="coolBox" aria-label="text to check">
 
-<p id="coolAnswer">
+<p id="coolAnswer" aria-live="polite">
 type something
 </p>
 
@@ -80,58 +101,9 @@ type something
 
 <a href="index.html">→ Back Home</a>
 
-<script>
+</main>
 
-function ratePotato(){
-
-    var ratings = [
-        "Tiny Potato",
-        "Average Potato",
-        "Mega Potato",
-        "Potato King",
-        "Supreme Potato Wizard"
-    ];
-
-    var randomPotatoThing =
-    Math.floor(Math.random()*ratings.length);
-
-    document.getElementById("ratingText").innerHTML =
-    ratings[randomPotatoThing];
-}
-
-function changeWorld(){
-
-    var colors = [
-        "pink",
-        "lightgreen",
-        "orange",
-        "lightblue",
-        "lavender"
-    ];
-
-    var mysteryColor =
-    Math.floor(Math.random()*colors.length);
-
-    document.body.style.backgroundColor =
-    colors[mysteryColor];
-}
-
-function checkStuff(){
-
-    var whatTheyTyped =
-    document.getElementById("coolBox").value;
-
-    if(whatTheyTyped.length < 5){
-        document.getElementById("coolAnswer").innerHTML =
-        "that is a short thing";
-    }
-    else{
-        document.getElementById("coolAnswer").innerHTML =
-        "wow long thing";
-    }
-}
-
-</script>
+<script src="assets/stats.js"></script>
 
 </body>
 </html>

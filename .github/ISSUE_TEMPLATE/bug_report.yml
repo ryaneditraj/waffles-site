@@ -1,0 +1,32 @@
+name: Bug report
+description: Something in the Potato Fan Club broke
+title: "bug: "
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did the page do, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: How can someone else see the same thing?
+      placeholder: |
+        1. Open index.html
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: Chrome 130 on macOS
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: A screenshot or the exact text on the page helps.

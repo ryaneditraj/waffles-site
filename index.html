@@ -1,42 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Potato Fan Club</title>
-
-    <style>
-        body{
-            background:#fff8d6;
-            font-family:Comic Sans MS;
-            padding:20px;
-        }
-
-        h1{
-            color:brown;
-        }
-
-        .potatobox{
-            border:3px dashed brown;
-            padding:15px;
-            width:350px;
-        }
-
-      button{
-            padding:10px;
-            margin-top:10px;
-            cursor:pointer;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Potato Fan Club — potato clicker, facts, and membership</title>
+    <meta name="description" content="Potato Fan Club is a free static potato website: click a potato, read a random potato fact, and join the club in your browser. A Hack Club Waffles project by Ryan Editraj.">
+    <meta name="author" content="Ryan Editraj">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#fff8d6">
+    <link rel="canonical" href="https://waffleshackclub.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Potato Fan Club">
+    <meta property="og:title" content="Potato Fan Club — potato clicker, facts, and membership">
+    <meta property="og:description" content="Click a potato, read a random potato fact, and join the club in your browser. A tiny static site from the Hack Club Waffles program by Ryan Editraj.">
+    <meta property="og:url" content="https://waffleshackclub.netlify.app/">
+    <meta property="og:image" content="https://waffleshackclub.netlify.app/docs/screenshots/home.png">
+    <meta property="og:image:alt" content="Potato Fan Club homepage with a potato photo, click counter, random fact, and membership box">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Potato Fan Club — potato clicker, facts, and membership">
+    <meta name="twitter:description" content="Click a potato, read a random potato fact, and join the club in your browser. A tiny static site from the Hack Club Waffles program by Ryan Editraj.">
+    <meta name="twitter:image" content="https://waffleshackclub.netlify.app/docs/screenshots/home.png">
+    <meta name="twitter:image:alt" content="Potato Fan Club homepage with a potato photo, click counter, random fact, and membership box">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com; style-src 'self'; script-src 'self' 'sha256-gEWG0n9NDMzbZKXsgwRq5HJ5nYntr6O4z4mBNUNlL60='; base-uri 'self'; form-action 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Potato Fan Club",
+      "url": "https://waffleshackclub.netlify.app/",
+      "description": "Potato Fan Club is a free static potato website: click a potato, read a random potato fact, and join the club in your browser. A Hack Club Waffles project by Ryan Editraj.",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://github.com/ryaneditraj#person"
       }
-
-        img{
-            width:250px;
-            border-radius:20px;
+    },
+    {
+      "@type": "Person",
+      "@id": "https://github.com/ryaneditraj#person",
+      "name": "Ryan Editraj",
+      "url": "https://github.com/ryaneditraj",
+      "sameAs": [
+        "https://github.com/ryaneditraj",
+        "https://instagram.com/ryaneditraj"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "url": "https://waffleshackclub.netlify.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Potato Fan Club?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Potato Fan Club is a small static website where you click a potato, read a random potato fact, and join a fan club in your browser. Ryan Editraj made it for the Hack Club Waffles program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I run this potato website on my computer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clone the repository and open index.html in a browser, or start a local server with python3 -m http.server and visit http://127.0.0.1:8000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does joining the club save or share my name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The name stays in this browser tab. It is not sent to a server, saved in a database, or shown to anyone else."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who made the Potato Fan Club?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ryan Editraj, an AI builder and tech creator. The project lives at github.com/ryaneditraj/waffles-site and Instagram is instagram.com/ryaneditraj."
+          }
         }
-
-        a{
-            font-size:20px;
-        }
-    </style>
+      ]
+    }
+  ]
+}
+    </script>
 </head>
-<body>
+<body class="home">
+
+<main>
 
 <h1>🥔 Potato Fan Club 🥔</h1>
 
@@ -45,7 +102,7 @@ Welcome to the greatest potato website ever made.
 I like potatoes. You probably like potatoes too.
 </p>
 
-<img id="potatoPic" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600">
+<img id="potatoPic" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600" alt="Several russet potatoes on a light wooden surface" referrerpolicy="no-referrer">
 
 <div class="potatobox">
 
@@ -53,9 +110,9 @@ I like potatoes. You probably like potatoes too.
 
 <p>Potatoes clicked:</p>
 
-<h1 id="potatoNum">0</h1>
+<h1 id="potatoNum" aria-live="polite">0</h1>
 
-<button onclick="clickPotato()">CLICK POTATO</button>
+<button id="clickPotatoButton" type="button">CLICK POTATO</button>
 
 </div>
 
@@ -65,11 +122,11 @@ I like potatoes. You probably like potatoes too.
 
 <h2>Random Potato Fact</h2>
 
-<p id="factArea">
+<p id="factArea" aria-live="polite">
 Press button for wisdom.
 </p>
 
-<button onclick="giveFact()">Give Fact</button>
+<button id="giveFactButton" type="button">Give Fact</button>
 
 </div>
 
@@ -79,56 +136,41 @@ Press button for wisdom.
 
 <h2>Become A Member</h2>
 
-<input id="nameBox" placeholder="your name">
+<input id="nameBox" placeholder="your name" aria-label="your name">
 
-<button onclick="joinClub()">Join</button>
+<button id="joinClubButton" type="button">Join</button>
 
-<p id="joinMsg"></p>
+<p id="joinMsg" aria-live="polite"></p>
 
 </div>
 
 <br>
 
-<a href="stats.html">Go To Secret Potato Stats Page →</a>
+<section class="potatobox" id="faq">
 
-<script>
+<h2>Questions people ask</h2>
 
-var superPotatoNumberThing = 0;
+<h3>What is the Potato Fan Club?</h3>
+<p>Potato Fan Club is a small static website where you click a potato, read a random potato fact, and join a fan club in your browser. Ryan Editraj made it for the Hack Club Waffles program.</p>
 
-function clickPotato(){
-    superPotatoNumberThing++;
+<h3>How do I run this potato website on my computer?</h3>
+<p>Clone the repository and open index.html in a browser, or start a local server with python3 -m http.server and visit http://127.0.0.1:8000.</p>
 
-    document.getElementById("potatoNum").innerHTML =
-    superPotatoNumberThing;
-}
+<h3>Does joining the club save or share my name?</h3>
+<p>No. The name stays in this browser tab. It is not sent to a server, saved in a database, or shown to anyone else.</p>
 
-function giveFact(){
+<h3>Who made the Potato Fan Club?</h3>
+<p>Ryan Editraj, an AI builder and tech creator. The project lives at github.com/ryaneditraj/waffles-site and Instagram is instagram.com/ryaneditraj.</p>
 
-    var weirdFacts = [
-        "Potatoes are awesome.",
-        "Some potatoes are bigger than your head.",
-        "French fries come from potatoes.",
-        "Potatoes have eyes but cannot see.",
-  "A potato never pays taxes."
-    ];
+</section>
 
-    var randomThing =
-    Math.floor(Math.random()*weirdFacts.length);
+<br>
 
-    document.getElementById("factArea").innerHTML =
-    weirdFacts[randomThing];
-}
+<a class="nav" href="stats.html">Go To Secret Potato Stats Page →</a>
 
-function joinClub(){
+</main>
 
-    var funnyName =
-    document.getElementById("nameBox").value;
-
-    document.getElementById("joinMsg").innerHTML =
-    funnyName + " is now officially a potato fan.";
-}
-
-</script>
+<script src="assets/home.js"></script>
 
 </body>
 </html>
