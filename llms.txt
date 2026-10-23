@@ -1,0 +1,22 @@
+# Potato Fan Club
+
+> A tiny static potato website from the Hack Club Waffles program by Ryan Editraj. Click a potato, read a random potato fact, and join the club in the browser.
+
+Potato Fan Club (repository name: waffles-site) is HTML, CSS, and vanilla JavaScript. There is no build step, no backend, and no API key. Names typed into the membership box stay in that browser tab. The potato statistics are jokes. Two photos are loaded from images.unsplash.com.
+
+## Pages
+
+- [Home](https://ryaneditraj.github.io/waffles-site/): potato click counter, random potato facts, fan-club membership, and a short FAQ
+- [Potato Stats Center](https://ryaneditraj.github.io/waffles-site/stats.html): random potato rating, background color changer, and a live name-length checker
+
+## Author
+
+- [Ryan Editraj on GitHub](https://github.com/ryaneditraj)
+- [Ryan Editraj on Instagram](https://instagram.com/ryaneditraj)
+
+## Project
+
+- [Source repository](https://github.com/ryaneditraj/waffles-site)
+- [Security policy](https://github.com/ryaneditraj/waffles-site/blob/main/SECURITY.md)
+- [Contributing](https://github.com/ryaneditraj/waffles-site/blob/main/CONTRIBUTING.md)
+- [License: MIT](https://github.com/ryaneditraj/waffles-site/blob/main/LICENSE)

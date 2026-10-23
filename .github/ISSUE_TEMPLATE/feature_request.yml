@@ -1,0 +1,17 @@
+name: Feature request
+description: An idea for the potato site
+title: "idea: "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should the site do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does that belong here?
+      description: Potato Fan Club is a tiny static site. A good idea fits that shape.
+    validations:
+      required: true

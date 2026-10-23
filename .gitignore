@@ -1,0 +1,19 @@
+# Secrets. Potato Fan Club does not need any today.
+.env
+.env.*
+!.env.example
+
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies, if a future tool adds them
+node_modules/
+vendor/
