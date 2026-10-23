@@ -61,14 +61,14 @@ There is no `package.json`, lockfile, or vendored library. GitHub Actions uses `
 
 ## Residual notes
 
-These are real limits of a static GitHub Pages site. They are not fixed in this tree.
+The live site is [waffleshackclub.netlify.app](https://waffleshackclub.netlify.app). `_headers` sets `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`, and `frame-ancestors` on that host. The meta Content-Security-Policy still covers scripts, styles, and images.
 
 | Topic | Why it remains |
 | --- | --- |
 | Unsplash photos | Both pages still request `images.unsplash.com`. A visitor’s browser contacts Unsplash to load the pictures. The images use `referrerpolicy="no-referrer"`. The Content-Security-Policy allows that host and no other image host. |
-| HTTP security headers | `frame-ancestors`, `X-Content-Type-Options`, and `Referrer-Policy` as a header are not available from a meta tag, and GitHub Pages does not let this repo set response headers. Clickjacking protection is therefore incomplete. A referrer policy meta tag is set. |
+| Netlify deploy-preview toolbar | Preview HTML includes `/.netlify/scripts/cdp` and an inline `style` attribute, and that script tries to frame `https://app.netlify.com/`. The meta policy blocks the inline style and that frame. Potato buttons still run. Production HTML checked on 23 October 2026 does not include that script. |
 | Joke stats and client-only membership | Ratings are random strings. Names disappear on reload. Do not describe the site as an account system. |
-| Content-Security-Policy via meta | Meta CSP cannot use `frame-ancestors` or a report URI. A host that can set headers could add those later. |
+| Content-Security-Policy split | Script and style rules are in the meta tag, where a hash can match each page’s JSON-LD. `frame-ancestors` is in `_headers` because a meta tag cannot set it. |
 | Self-hosted photos | Until the photos live in the repo, the page is not fully offline and depends on Unsplash staying up. |
 
 ## Hardening already in the pages

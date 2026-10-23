@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "robots.txt",
     "sitemap.xml",
     "llms.txt",
+    "_headers",
     ".github/workflows/ci.yml",
     ".github/dependabot.yml",
     ".github/CODEOWNERS",
@@ -226,14 +227,24 @@ def main() -> int:
         errors.append("LICENSE should be the MIT license for Ryan Editraj")
 
     robots = read("robots.txt") if (ROOT / "robots.txt").is_file() else ""
-    if "Sitemap: https://ryaneditraj.github.io/waffles-site/sitemap.xml" not in robots:
+    if "Sitemap: https://waffleshackclub.netlify.app/sitemap.xml" not in robots:
         errors.append("robots.txt is missing the sitemap URL")
+
+    headers = read("_headers") if (ROOT / "_headers").is_file() else ""
+    for needle in (
+        "X-Content-Type-Options: nosniff",
+        "Referrer-Policy: strict-origin-when-cross-origin",
+        "X-Frame-Options: DENY",
+        "frame-ancestors 'none'",
+    ):
+        if needle not in headers:
+            errors.append(f"_headers is missing {needle}")
 
     if (ROOT / "sitemap.xml").is_file():
         sitemap = read("sitemap.xml")
         for loc in (
-            "https://ryaneditraj.github.io/waffles-site/",
-            "https://ryaneditraj.github.io/waffles-site/stats.html",
+            "https://waffleshackclub.netlify.app/",
+            "https://waffleshackclub.netlify.app/stats.html",
         ):
             if loc not in sitemap:
                 errors.append(f"sitemap.xml is missing {loc}")

@@ -38,7 +38,7 @@ A short run through the clicker, a fact, joining the club, and the stats page:
 | Data | None. Nothing is stored or sent |
 | Photos | Hotlinked from `images.unsplash.com` |
 | Checks | Python script in GitHub Actions |
-| Hosting fit | GitHub Pages from the repository root |
+| Hosting | Netlify, at waffleshackclub.netlify.app |
 
 ## Quick start
 
@@ -52,15 +52,11 @@ python3 -m http.server 8000
 
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-You can also open `index.html` directly from the folder. The local server matches the way GitHub Pages serves the files, so it is the better check.
+You can also open `index.html` directly from the folder. The local server matches the way Netlify serves the files, so it is the better check.
 
-### Publish on GitHub Pages
+### Live site
 
-The meta tags, sitemap, and `robots.txt` use this address as the public site:
-
-`https://ryaneditraj.github.io/waffles-site/`
-
-To serve that URL, turn on Pages in the repository settings, choose **Deploy from a branch**, and set the branch to `main` and the folder to **`/ (root)`**. This pull request does not change those settings.
+Netlify already deploys this repository to [waffleshackclub.netlify.app](https://waffleshackclub.netlify.app). The meta tags, sitemap, and `robots.txt` use that address. A pull request preview is published by the same Netlify site.
 
 ## Usage
 
@@ -92,6 +88,7 @@ waffles-site/
 ├── robots.txt
 ├── sitemap.xml
 ├── llms.txt                Short brief for answer engines
+├── _headers                Netlify security headers
 ├── .env.example            Documents that no secrets are required
 └── .github/                Issue templates, PR template, CI
 ```
@@ -104,7 +101,7 @@ Ideas for later, not promises:
 - [ ] Remember the click count in `localStorage`
 - [ ] Add more facts and ratings while keeping the jokes
 - [ ] Let the fixed-width boxes sit more comfortably on a phone
-- [ ] Note the live GitHub Pages URL here once Pages is switched on
+- [ ] Keep the Netlify address in the meta tags if the public URL ever changes
 
 ## FAQ
 
@@ -130,7 +127,7 @@ They are jokes. The stats page says so: scientists did not help. The rating is a
 
 ### What tech stack does the Potato Fan Club use?
 
-HTML, CSS, and vanilla JavaScript. GitHub Actions runs `scripts/check_site.py`. The intended host is GitHub Pages. There is no framework and no package manifest.
+HTML, CSS, and vanilla JavaScript. GitHub Actions runs `scripts/check_site.py`. Netlify hosts the live site at waffleshackclub.netlify.app. There is no framework and no package manifest.
 
 ### Does this site use cookies, accounts, or an API key?
 
@@ -148,7 +145,7 @@ Details are in [CONTRIBUTING.md](CONTRIBUTING.md). Please follow the [Code of Co
 
 ## Security
 
-The membership box used to assign the typed name with `innerHTML`. It now uses `textContent`, and both pages send a Content-Security-Policy. No API keys were found in the tree or in git history, so there is nothing to rotate. The photos still come from Unsplash, and GitHub Pages cannot set HTTP security headers.
+The membership box used to assign the typed name with `innerHTML`. It now uses `textContent`, and both pages send a Content-Security-Policy. No API keys were found in the tree or in git history, so there is nothing to rotate. The photos still come from Unsplash. Netlify response headers live in `_headers`.
 
 The full notes are in [SECURITY.md](SECURITY.md). Report a vulnerability through [GitHub security advisories](https://github.com/ryaneditraj/waffles-site/security/advisories/new).
 

@@ -6,8 +6,8 @@ Potato Fan Club (repository name: waffles-site) is HTML, CSS, and vanilla JavaSc
 
 ## Pages
 
-- [Home](https://ryaneditraj.github.io/waffles-site/): potato click counter, random potato facts, fan-club membership, and a short FAQ
-- [Potato Stats Center](https://ryaneditraj.github.io/waffles-site/stats.html): random potato rating, background color changer, and a live name-length checker
+- [Home](https://waffleshackclub.netlify.app/): potato click counter, random potato facts, fan-club membership, and a short FAQ
+- [Potato Stats Center](https://waffleshackclub.netlify.app/stats.html): random potato rating, background color changer, and a live name-length checker
 
 ## Author
 
